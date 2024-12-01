@@ -1,12 +1,25 @@
 package days
 
-@AdventOfCodePuzzle(
-    name = "Puzzle Name",
-    url = "https://adventofcode.com/2000/day/1",
-    date = Date(day = 1, year = 2000)
-)
-class Day1(private val input: List<Int>) : Puzzle {
-    override fun partOne() = input.sum()
+import kotlin.math.abs
 
-    override fun partTwo() = input.foldRight(1) { element, acc -> element * acc }
+@AdventOfCodePuzzle(
+    name = "Historian Hysteria",
+    url = "https://adventofcode.com/2024/day/1",
+    date = Date(day = 1, year = 2024)
+)
+class Day1(input: List<String>) : Puzzle {
+
+    private val lines: List<Pair<Int, Int>> = input
+        .map { line -> line.split("""\s+""".toRegex()).let { (a, b) -> a.toInt() to b.toInt() } }
+    private val left = lines.map { it.first }.sorted()
+    private val right = lines.map { it.second }.sorted()
+    private val frequencies = right.groupingBy { it }.eachCount()
+
+    override fun partOne(): Int = left
+        .zip(right)
+        .sumOf { pair -> abs(pair.second - pair.first) }
+
+    override fun partTwo(): Int = left
+        .fold(0) { acc, num -> acc + num * frequencies.getOrDefault(num, 0) }
+
 }

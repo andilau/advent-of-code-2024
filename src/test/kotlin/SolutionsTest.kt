@@ -9,7 +9,7 @@ import util.InputReader
 class SolutionsTest {
     @TestFactory
     fun testAdventOfCode() = listOf(
-        Day1(InputReader.getInputAsListOfInt(1)) to Pair(45, 362_880),
+        Day1(InputReader.getInputAsList(1)) to Pair(1879048, 21024792),
     )
         .map { (day, answers) ->
             DynamicTest.dynamicTest("${day.javaClass.simpleName} -> ${answers.first} / ${answers.second}") {

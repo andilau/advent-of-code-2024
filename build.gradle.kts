@@ -26,12 +26,25 @@ dependencies {
     testImplementation("org.assertj:assertj-core:3.26.3")
 }
 
+kotlin {
+    jvmToolchain(17)
+    sourceSets.all {
+        languageSettings {
+            languageVersion = "2.0"
+        }
+    }
+}
+
 tasks {
     withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "11"
         kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict")
     }
-    test {
-        useJUnitPlatform()
+}
+
+testing {
+    suites {
+        val test by getting(JvmTestSuite::class) {
+            useJUnitJupiter()
+        }
     }
 }
