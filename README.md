@@ -7,6 +7,7 @@ Advent of Code is an Advent calendar of small programming puzzles by [Eric Wastl
 
 - Day 1: [Historian Hysteria](https://adventofcode.com/2024/day/1) -- [Day1.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day1.kt)
 - Day 2: [Red-Nosed Reports](https://adventofcode.com/2024/day/2) -- [Day2.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day2.kt)
+- Day 3: [Mull It Over](https://adventofcode.com/2024/day/3) -- [Day3.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day3.kt)
 
 ### Features
 
