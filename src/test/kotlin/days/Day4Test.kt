@@ -33,8 +33,8 @@ class Day4Test {
     @DisplayName("Part 2")
     inner class Part2 {
         @Test
-        fun shouldReturnSumOfSafeReports() {
-            assertThat(Day4("xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))".lines()).partTwo()).isEqualTo(48)
+        fun `How many times does an X-MAS appear`() {
+            assertThat(Day4(memory).partTwo()).isEqualTo(9)
         }
 
     }
