@@ -10,6 +10,7 @@ Advent of Code is an Advent calendar of small programming puzzles by [Eric Wastl
 - Day 3: [Mull It Over](https://adventofcode.com/2024/day/3) -- [Day3.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day3.kt)
 - Day 4: [Ceres Search](https://adventofcode.com/2024/day/4) -- [Day4.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day4.kt)
 - Day 5: [Print Queue](https://adventofcode.com/2024/day/5) -- [Day5.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day5.kt)
+- Day 7: [Bridge Repair](https://adventofcode.com/2024/day/7) -- [Day7.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day7.kt)
 
 ### Features
 
