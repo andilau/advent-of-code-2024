@@ -19,23 +19,23 @@ class Day6(private val input: List<String>) : Puzzle {
             }
         }
 
-    private fun onGrid(pos: Point): Boolean =
-        pos.x in 0..input[0].lastIndex && pos.y in 0..input.lastIndex
+    private fun Point.onGrid(): Boolean =
+        x in 0..input[0].lastIndex && y in 0..input.lastIndex
 
     override fun partOne(): Int = findPath(obstacles).map { it.first }.toSet().size
 
     override fun partTwo(): Int {
         val tryObstacles: Set<Point> = findPath(obstacles).map { it.first }.toSet() - start.first
+        println("tryObstacles = ${tryObstacles.count()}")
         return tryObstacles
-            .map { o -> findPath(obstacles + o) }
-            .count { it.isEmpty() }
+            .map { o -> findPath(obstacles + o).size }
+            .count { it==0 }
     }
 
     private fun findPath(obstacles: List<Point>): List<Pair<Point, Direction>> {
         val path = mutableListOf<Pair<Point, Direction>>()
         var pos: Pair<Point, Direction> = start
-        while (onGrid(pos.first)) {
-            if (pos in path) return emptyList()
+        while (pos.first.onGrid()) {
             path.add(pos)
 
             val peek = pos.first + pos.second.move
@@ -43,6 +43,7 @@ class Day6(private val input: List<String>) : Puzzle {
 
             val next = pos.first + pos.second.move
             pos = next to pos.second
+            if (pos in path) return emptyList()
         }
         return path
     }
