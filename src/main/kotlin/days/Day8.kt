@@ -11,14 +11,13 @@ class Day8(val input: List<String>) : Puzzle {
     val sym = findAllIgnoring('.').groupBy({ it.first }, { it.second })
 
     override fun partOne() = sym.values
-        .flatMap { antennas -> antinodes(antennas) }
+        .flatMap { antennas -> firstAntinodes(antennas) }
         .filter { inBounds(it) }
         .toSet()
         .size
 
     override fun partTwo() = sym.values
-        .flatMap { antennas -> antinodes2(antennas) }
-        .filter { inBounds(it) }
+        .flatMap { antennas -> allAntinodes(antennas) }
         .toSet()
         .size
 
@@ -27,18 +26,18 @@ class Day8(val input: List<String>) : Puzzle {
 
     private fun inBounds(point: Point): Boolean = point.x in input[0].indices && point.y in input.indices
 
-    private fun antinodes(antennas: List<Point>): List<Point> =
+    private fun firstAntinodes(antennas: List<Point>): List<Point> =
         antennas.flatMap { antenna ->
             (antennas - antenna).map { antenna + ((it - antenna) * 2) }
         }
 
-    private fun antinodes2(antennas: List<Point>): List<Point> =
+    private fun allAntinodes(antennas: List<Point>): List<Point> =
         antennas.flatMap { antenna ->
-            (antennas - antenna).flatMap { point(antenna, it) }
+            (antennas - antenna).flatMap { antinodesOf(antenna, it) }
         }
 
-    private fun point(antenna: Point, point: Point) = generateSequence<Point>(antenna) {
-        val next = it + (point - antenna)
+    private fun antinodesOf(antenna: Point, other: Point) = generateSequence<Point>(antenna) {
+        val next = it + (other - antenna)
         if (inBounds(next)) next else null
     }
 
