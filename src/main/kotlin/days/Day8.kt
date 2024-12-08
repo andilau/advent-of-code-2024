@@ -1,7 +1,5 @@
 package days
 
-import kotlinx.coroutines.yield
-
 
 @AdventOfCodePuzzle(
     name = "Resonant Collinearity",
@@ -10,10 +8,7 @@ import kotlinx.coroutines.yield
 )
 class Day8(val input: List<String>) : Puzzle {
 
-    val sym = find('.').groupBy({ it.first }, { it.second })
-
-    private fun find(symbol: Char) = input
-        .flatMapIndexed { y, line -> line.mapIndexedNotNull() { x, c -> if (c != symbol) c to Point(x, y) else null } }
+    val sym = findAllIgnoring('.').groupBy({ it.first }, { it.second })
 
     override fun partOne() = sym.values
         .flatMap { antennas -> antinodes(antennas) }
@@ -26,6 +21,9 @@ class Day8(val input: List<String>) : Puzzle {
         .filter { inBounds(it) }
         .toSet()
         .size
+
+    private fun findAllIgnoring(symbol: Char) = input
+        .flatMapIndexed { y, line -> line.mapIndexedNotNull() { x, c -> if (c != symbol) c to Point(x, y) else null } }
 
     private fun inBounds(point: Point): Boolean = point.x in input[0].indices && point.y in input.indices
 
