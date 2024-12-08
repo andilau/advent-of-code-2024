@@ -1,5 +1,7 @@
 package days
 
+import kotlinx.coroutines.yield
+
 
 @AdventOfCodePuzzle(
     name = "Resonant Collinearity",
@@ -13,23 +15,34 @@ class Day8(val input: List<String>) : Puzzle {
     private fun find(symbol: Char) = input
         .flatMapIndexed { y, line -> line.mapIndexedNotNull() { x, c -> if (c != symbol) c to Point(x, y) else null } }
 
-    override fun partOne(): Int {
-        val antidodes = sym.flatMap { (symbol, locations) ->
-            println("symbol = ${symbol}, locations = ${locations}")
-            val points = locations.flatMap { loc ->
-                val points = locations - loc
-                val antenna = points.map { loc + ((it - loc) * 2) }
-                //println("  loc = ${loc} -> $points -> $antenna")
-                antenna
-            }
-            points
-        }
-            .filter { it.x in input[0].indices && it.y in input.indices }
-            .toSet()
-        return antidodes.size
-    }
+    override fun partOne() = sym.values
+        .flatMap { antennas -> antinodes(antennas) }
+        .filter { inBounds(it) }
+        .toSet()
+        .size
 
-    override fun partTwo() = 0
+    override fun partTwo() = sym.values
+        .flatMap { antennas -> antinodes2(antennas) }
+        .filter { inBounds(it) }
+        .toSet()
+        .size
+
+    private fun inBounds(point: Point): Boolean = point.x in input[0].indices && point.y in input.indices
+
+    private fun antinodes(antennas: List<Point>): List<Point> =
+        antennas.flatMap { antenna ->
+            (antennas - antenna).map { antenna + ((it - antenna) * 2) }
+        }
+
+    private fun antinodes2(antennas: List<Point>): List<Point> =
+        antennas.flatMap { antenna ->
+            (antennas - antenna).flatMap { point(antenna, it) }
+        }
+
+    private fun point(antenna: Point, point: Point) = generateSequence<Point>(antenna) {
+        val next = it + (point - antenna)
+        if (inBounds(next)) next else null
+    }
 
     data class Point(val x: Int, val y: Int) {
 

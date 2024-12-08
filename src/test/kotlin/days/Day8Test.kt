@@ -26,7 +26,7 @@ class Day8Test {
     inner class Part1 {
 
         @Test
-        fun `How many unique locations within the bounds of the map contain an antinode?`() {
+        fun `How many unique locations within the bounds of the map contain an antinode`() {
             assertThat(Day8(map).partOne()).isEqualTo(14)
         }
     }
@@ -35,7 +35,7 @@ class Day8Test {
     @DisplayName("Part 2")
     inner class Part2 {
         @Test
-        fun `How many unique locations within the bounds of the map contain an antinode?`() {
+        fun `How many unique locations within the bounds of the map contain an antinode`() {
             assertThat(Day8(map).partTwo()).isEqualTo(34)
         }
 
