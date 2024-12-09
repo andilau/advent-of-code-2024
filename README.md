@@ -11,7 +11,8 @@ Advent of Code is an Advent calendar of small programming puzzles by [Eric Wastl
 - Day 4: [Ceres Search](https://adventofcode.com/2024/day/4) -- [Day4.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day4.kt)
 - Day 5: [Print Queue](https://adventofcode.com/2024/day/5) -- [Day5.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day5.kt)
 - Day 7: [Bridge Repair](https://adventofcode.com/2024/day/7) -- [Day7.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day7.kt)
-- Day 8: [Resonant Collinearity](https://adventofcode.com/2024/day/8) -- [Day7.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day8.kt)
+- Day 8: [Resonant Collinearity](https://adventofcode.com/2024/day/8) -- [Day8.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day8.kt)
+- Day 8: [Disk Fragmenter](https://adventofcode.com/2024/day/9) -- [Day9.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day9.kt)
 
 ### Features
 
