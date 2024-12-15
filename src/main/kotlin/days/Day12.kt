@@ -8,15 +8,15 @@ package days
 )
 class Day12(val input: List<String>) : Puzzle {
 
-    val garden: Map<Point, Char> = input.flatMapIndexed { y, line -> line.mapIndexed { x, c -> Point(x, y) to c } }.toMap()
-    val seen = mutableSetOf<Point>()
-    val regions: List<Region> = garden.keys.mapNotNull { findRegion(it, seen) }.also { println(it) }
+    private val garden: Map<Point, Char> = input.flatMapIndexed { y, line -> line.mapIndexed { x, c -> Point(x, y) to c } }.toMap()
+    private val seen = mutableSetOf<Point>()
+    private val regions: List<Region> = garden.keys.mapNotNull { findRegion(it, seen) }
 
     override fun partOne() = regions.sumOf { it.area * it.perimeter }
 
     override fun partTwo() = regions.sumOf { it.area * it.sides }
 
-    fun findRegion(start: Point, seen: MutableSet<Point>): Region? {
+    private fun findRegion(start: Point, seen: MutableSet<Point>): Region? {
         val plant = garden[start]
         val queue = mutableListOf(start)
         val region = mutableSetOf<Point>()
@@ -34,13 +34,15 @@ class Day12(val input: List<String>) : Puzzle {
 
     data class Region(val char: Char, val region: Set<Point>) {
         val area = region.size
-        val perimeter = region.sumOf { plant -> plant.neighbors().count { it !in region } }
-        val corners = region.sumOf { plant ->
-            plant.corners().count {
-                (it[0] !in region && it[2] !in region)
-                        || (it[0] in region && it[1] !in region && it[2] in region)
+        val perimeter: Int
+            get() = region.sumOf { plant -> plant.neighbors().count { it !in region } }
+        val corners: Int
+            get() = region.sumOf { plant ->
+                plant.corners().count {
+                    (it[0] !in region && it[2] !in region)
+                            || (it[0] in region && it[1] !in region && it[2] in region)
+                }
             }
-        }
         val sides = corners
     }
 
@@ -54,10 +56,10 @@ class Day12(val input: List<String>) : Puzzle {
         fun corners() = CORNERS.map { (a, b) -> listOf(this + a, this + a + b, this + b) }
 
         companion object {
-            val NORTH = Point(-1, 0)
-            val WEST = Point(0, -1)
-            val SOUTH = Point(1, 0)
-            val EAST = Point(0, 1)
+            private val NORTH = Point(-1, 0)
+            private val WEST = Point(0, -1)
+            private val SOUTH = Point(1, 0)
+            private val EAST = Point(0, 1)
             val NEIGHBORS = listOf(EAST, SOUTH, WEST, NORTH)
             val CORNERS = listOf(EAST, SOUTH, WEST, NORTH, EAST).zipWithNext()
         }
