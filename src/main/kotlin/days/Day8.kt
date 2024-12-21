@@ -41,11 +41,4 @@ class Day8(val input: List<String>) : Puzzle {
         if (inBounds(next)) next else null
     }
 
-    data class Point(val x: Int, val y: Int) {
-
-        operator fun plus(other: Point) = Point(x + other.x, y + other.y)
-        operator fun minus(other: Point) = Point(x - other.x, y - other.y)
-        operator fun times(o: Int) = Point(x * o, y * o)
-    }
-
 }

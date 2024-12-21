@@ -17,12 +17,12 @@ class Day18(val input: List<String>) : Puzzle {
     private val start = Point(range.start, range.start)
     private val exit = Point(range.last, range.last)
 
-    override fun partOne() = path(bytes)
+    override fun partOne() = distance(bytes)
 
     override fun partTwo(): String = (elements..input.lastIndex).firstNotNullOf {
         val b = input.take(it).map { line -> Point.from(line) }
         try {
-            path(b)
+            distance(b)
             null
         } catch (e: Exception) {
             b.last().let { (x, y) -> "${x},${y}" }
@@ -37,24 +37,7 @@ class Day18(val input: List<String>) : Puzzle {
         }
     }
 
-    data class Point(val x: Int, val y: Int) {
-        operator fun plus(other: Point) = Point(x + other.x, y + other.y)
-        operator fun minus(other: Point) = Point(x - other.x, y - other.y)
-        operator fun times(o: Int) = Point(x * o, y * o)
-
-        fun neighbours() = setOf(
-            copy(x = x + 1),
-            copy(y = y + 1),
-            copy(x = x - 1),
-            copy(y = y - 1),
-        )
-
-        companion object {
-            fun from(line: String) = line.split(',').map { it.toInt() }.let { (x, y) -> Point(x, y) }
-        }
-    }
-
-    private fun path(bytes: List<Point>): Int {
+    private fun distance(bytes: List<Point>): Int {
         val queue = PriorityQueue<Pair<Point, Int>> { a, b -> a.second.compareTo(b.second) }
         queue.add(start to 0)
         val seen = mutableSetOf<Point>()
@@ -65,7 +48,7 @@ class Day18(val input: List<String>) : Puzzle {
             if (next in seen) continue
             seen += next
             if (next == exit) return cost
-            next.neighbours()
+            next.neighbors()
                 .filter { it.x in range && it.y in range }
                 .filter { it !in bytes }
                 .forEach { queue.add(it to cost + 1) }
