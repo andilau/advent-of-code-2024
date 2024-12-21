@@ -14,6 +14,7 @@ Advent of Code is an Advent calendar of small programming puzzles by [Eric Wastl
 - Day 8: [Resonant Collinearity](https://adventofcode.com/2024/day/8) -- [Day8.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day8.kt)
 - Day 12: [Garden Groups](https://adventofcode.com/2024/day/12) -- [Day12.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day12.kt)
 - Day 14: [Restroom Redoubt](https://adventofcode.com/2024/day/14) -- [Day14.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day14.kt)
+- Day 18: [RAM Run](https://adventofcode.com/2024/day/18) -- [Day18.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day18.kt)
 
 ### Features
 
