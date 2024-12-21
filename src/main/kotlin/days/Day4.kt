@@ -43,5 +43,4 @@ class Day4(val memory: List<String>) : Puzzle {
         return memory[y][x]
     }
 
-    data class Point(val x: Int, val y: Int)
 }
