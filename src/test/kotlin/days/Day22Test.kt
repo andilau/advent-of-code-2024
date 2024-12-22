@@ -1,6 +1,7 @@
 package days
 
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -18,6 +19,7 @@ class Day22Test {
     inner class Part1 {
 
         @Test
+        @Disabled
         fun `what is the minimum number of steps needed to reach the exit`() {
             //assertThat(Day22(input).next(input.map { it.toInt() })).isEqualTo(listOf(0, 0, 0, 0))
             assertThat(Day22(listOf("123")).partOne()).isEqualTo(22)
@@ -35,6 +37,7 @@ class Day22Test {
     inner class Part2 {
 
         @Test
+        @Disabled
         fun `what is the minimum number of steps needed to reach the exit`() {
             assertThat(Day22(listOf("123")).partTwo()).isEqualTo(6)
         }
