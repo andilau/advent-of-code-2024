@@ -12,13 +12,20 @@ Advent of Code is an Advent calendar of small programming puzzles by [Eric Wastl
 - Day 5: [Print Queue](https://adventofcode.com/2024/day/5) -- [Day5.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day5.kt)
 - Day 6: [Guard Gallivant](https://adventofcode.com/2024/day/6) -- [Day6.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day6.kt)
 - Day 7: [Bridge Repair](https://adventofcode.com/2024/day/7) -- [Day7.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day7.kt)
+- Day 8: [Resonant Collinearity](https://adventofcode.com/2024/day/8) -- [Day8.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day8.kt)
+- Day 10: [Hoof It](https://adventofcode.com/2024/day/10) -- [Day10.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day10.kt)
+- Day 12: [Garden Groups](https://adventofcode.com/2024/day/12) -- [Day12.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day12.kt)
+- Day 14: [Restroom Redoubt](https://adventofcode.com/2024/day/14) -- [Day14.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day14.kt)
+- Day 18: [RAM Run](https://adventofcode.com/2024/day/18) -- [Day18.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day18.kt)
+- Day 22: [Monkey Market](https://adventofcode.com/2024/day/22) -- [Day22.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day22.kt)
+- Day 23: [LAN Party](https://adventofcode.com/2024/day/23) -- [Day23.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day23.kt) 1/2
 
 ### Features
 
 * Gradle setup so you can run a specific day or all days on the command line (see **Running**)
 * Timings for each part of each day
 * Input for each day automatically exposed in String and List form
-* [Junit 5](https://junit.org/junit5/) and [AssertJ](https://assertj.github.io/doc/) test libraries included (see **Testing**)
+* [JUnit 5](https://junit.org/junit5/) and [AssertJ](https://assertj.github.io/doc/) test libraries included (see **Testing**)
 * Starter .gitignore
 
 ### Running
