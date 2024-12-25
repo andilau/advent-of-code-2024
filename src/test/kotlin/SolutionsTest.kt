@@ -16,7 +16,13 @@ class SolutionsTest {
         Day5(InputReader.getInputAsList(5)) to Pair(6041, 4884),
         Day7(InputReader.getInputAsList(7)) to Pair(267566105056L, 116094961956019L),
         Day8(InputReader.getInputAsList(8)) to Pair(371, 1229),
-        Day9(InputReader.getInputAsString(9)) to Pair(6421128769094L, 0),
+        Day10(InputReader.getInputAsList(10)) to Pair(501, 1017),
+        Day12(InputReader.getInputAsList(12)) to Pair(1464678, 877492),
+        Day14(InputReader.getInputAsList(14)) to Pair(214109808L, 7687),
+        Day18(InputReader.getInputAsList(18)) to Pair(370, "65,6"),
+        Day22(InputReader.getInputAsList(22)) to Pair(14869099597L, 1717),
+        Day23(InputReader.getInputAsList(23)) to Pair(1156, ""),
+        Day25(InputReader.getInputAsString(25)) to Pair(3223, Unit),
     )
         .map { (day, answers) ->
             DynamicTest.dynamicTest("${day.javaClass.simpleName} -> ${answers.first} / ${answers.second}") {
