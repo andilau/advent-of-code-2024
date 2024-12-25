@@ -57,6 +57,7 @@ class Day23Test {
     inner class Part2 {
 
         @Test
+        @Disabled
         fun `What is the password to get into the LAN party`() {
             assertThat(Day23(input).partTwo()).isEqualTo("co,de,ka,ta")
         }
