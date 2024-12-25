@@ -17,6 +17,7 @@ Advent of Code is an Advent calendar of small programming puzzles by [Eric Wastl
 - Day 14: [Restroom Redoubt](https://adventofcode.com/2024/day/14) -- [Day14.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day14.kt)
 - Day 18: [RAM Run](https://adventofcode.com/2024/day/18) -- [Day18.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day18.kt)
 - Day 22: [Monkey Market](https://adventofcode.com/2024/day/22) -- [Day22.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day22.kt)
+- Day 23: [LAN Party](https://adventofcode.com/2024/day/23) -- [Day23.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day23.kt) 1/2
 - Day 25: [Day 25: Code Chronicle](https://adventofcode.com/2024/day/25) -- [Day25.kt](https://github.com/andilau/advent-of-code-2024/blob/main/src/main/kotlin/days/Day25.kt)
 
 ### Features
