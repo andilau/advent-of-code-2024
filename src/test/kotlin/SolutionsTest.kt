@@ -18,6 +18,7 @@ class SolutionsTest {
         Day7(InputReader.getInputAsList(7)) to Pair(267566105056L, 116094961956019L),
         Day8(InputReader.getInputAsList(8)) to Pair(371, 1229),
         Day10(InputReader.getInputAsList(10)) to Pair(501, 1017),
+        Day10(InputReader.getInputAsList(11)) to Pair(186203L, 186203L),
         Day12(InputReader.getInputAsList(12)) to Pair(1464678, 877492),
         Day14(InputReader.getInputAsList(14)) to Pair(214109808L, 7687),
         Day18(InputReader.getInputAsList(18)) to Pair(370, "65,6"),
