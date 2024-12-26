@@ -13,10 +13,9 @@ class Day6(private val input: List<String>) : Puzzle {
     override fun partOne(): Int = obstacles.findPath().map { it.first }.toSet().size
 
     override fun partTwo(): Int {
-        val tryObstacles: Set<Point> = obstacles.findPath().map { it.first }.toSet() - start.first
-        return tryObstacles
-            .map { o -> (obstacles + o).findPath().size }
-            .count { it == 0 }
+        val guardPath: Set<Point> = obstacles.findPath().map { it.first }.toSet() - start.first
+        return guardPath
+            .count { obstacle -> (obstacles + obstacle).findPath().isEmpty() }
     }
 
     private fun List<Point>.findPath(): List<Pair<Point, Direction>> {
