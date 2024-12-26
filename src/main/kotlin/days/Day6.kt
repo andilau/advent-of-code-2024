@@ -10,31 +10,27 @@ class Day6(private val input: List<String>) : Puzzle {
     private val obstacles: List<Point> = findSymbols('#')
     private val start: Pair<Point, Direction> = findSymbols('^').first() to Direction.NORTH
 
-    override fun partOne(): Int = findPath(obstacles).map { it.first }.toSet().size
+    override fun partOne(): Int = obstacles.findPath().map { it.first }.toSet().size
 
     override fun partTwo(): Int {
-        val tryObstacles: Set<Point> = findPath(obstacles).map { it.first }.toSet() - start.first
-        println("tryObstacles = ${tryObstacles.count()}")
-        println("start = ${start}")
-        draw(tryObstacles.toList(), 0..input.size, 0..input[0].length)
-
+        val tryObstacles: Set<Point> = obstacles.findPath().map { it.first }.toSet() - start.first
         return tryObstacles
-            .map { o -> findPath(obstacles + o).size }
+            .map { o -> (obstacles + o).findPath().size }
             .count { it == 0 }
     }
 
-    private fun findPath(obstacles: List<Point>): List<Pair<Point, Direction>> {
+    private fun List<Point>.findPath(): List<Pair<Point, Direction>> {
         val path = mutableListOf<Pair<Point, Direction>>()
 
         var guard: Pair<Point, Direction> = start
         while (guard.first.onGrid()) {
             path.add(guard)
 
-            val peek = guard.first + guard.second.move
-            if (peek in obstacles) guard = guard.first to guard.second.turnRight()
-
             val next = guard.first + guard.second.move
-            guard = next to guard.second
+            guard = if (next in this) {
+                guard.first to guard.second.turnRight()
+            } else
+                next to guard.second
             if (guard in path) return emptyList()
         }
         return path
