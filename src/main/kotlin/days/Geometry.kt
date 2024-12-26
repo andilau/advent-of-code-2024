@@ -20,3 +20,27 @@ data class Point(val x: Int, val y: Int) {
         fun from(line: String) = line.split(',').map { it.toInt() }.let { (x, y) -> Point(x, y) }
     }
 }
+
+fun draw(points: List<Point>, yRange: IntRange, xRange: IntRange) {
+    (yRange).forEach { y ->
+        (xRange).map { x ->
+            if (points.any { it == Point(x, y) }) "#" else "."
+        }.joinToString("").also { println(it) }
+    }
+}
+
+enum class Direction(val move: Point) {
+    NORTH(Point(0, -1)),
+    SOUTH(Point(0, 1)),
+    EAST(Point(1, 0)),
+    WEST(Point(-1, 0));
+
+    fun turnRight(): Direction {
+        return when (this) {
+            NORTH -> EAST
+            EAST -> SOUTH
+            SOUTH -> WEST
+            WEST -> NORTH
+        }
+    }
+}

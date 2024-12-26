@@ -33,7 +33,7 @@ class Day6Test {
     @DisplayName("Part 2")
     inner class Part2 {
         @Test
-        fun shouldReturnSumOfSafeReports() {
+        fun `How many different positions could you choose for this obstruction`() {
             assertThat(Day6(memory).partTwo()).isEqualTo(6)
         }
 
