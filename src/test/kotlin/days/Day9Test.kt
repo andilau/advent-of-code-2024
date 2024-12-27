@@ -23,8 +23,8 @@ class Day9Test {
     @DisplayName("Part 2")
     inner class Part2 {
         @Test
-        fun `How many unique locations within the bounds of the map contain an antinode`() {
-            assertThat(Day9(map).partTwo()).isEqualTo(2858)
+        fun `What is the resulting filesystem checksum`() {
+            assertThat(Day9(map).partTwo()).isEqualTo(2858L)
         }
 
     }
