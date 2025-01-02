@@ -1,4 +1,4 @@
-# Advent of Code Starter
+# Advent of Code 2024
 
 This project contains solutions to the [Advent of Code 2024](https://adventofcode.com/2024) challenge in [Kotlin](https://kotlinlang.org/).
 Advent of Code is an Advent calendar of small programming puzzles by [Eric Wastl](http://was.tl/).
