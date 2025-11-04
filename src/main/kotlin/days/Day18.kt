@@ -29,14 +29,6 @@ class Day18(val input: List<String>) : Puzzle {
         }
     }
 
-    private fun draw(bytes: List<Point>) {
-        (range).forEach { y ->
-            (range).map { x ->
-                if (bytes.any { it == Point(x, y) }) "#" else "."
-            }.joinToString("").also { println(it) }
-        }
-    }
-
     private fun distance(bytes: List<Point>): Int {
         val queue = PriorityQueue<Pair<Point, Int>> { a, b -> a.second.compareTo(b.second) }
         queue.add(start to 0)
