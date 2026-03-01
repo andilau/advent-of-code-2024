@@ -12,6 +12,9 @@ updates:
       day: saturday
   - package-ecosystem: "github-actions"
     directory: "/"
+    groups:
+      all-actions:
+        patterns: "*"
     schedule:
       interval: weekly
       day: saturday
