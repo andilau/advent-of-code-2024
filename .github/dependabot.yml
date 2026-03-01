@@ -14,7 +14,7 @@ updates:
     directory: "/"
     groups:
       all-actions:
-        patterns: "*"
+        patterns: ["*"]
     schedule:
       interval: weekly
       day: saturday
